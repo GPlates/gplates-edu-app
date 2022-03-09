@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "gplates-edu-ion",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
