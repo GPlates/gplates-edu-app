@@ -20,6 +20,10 @@ The following steps worked on my Macbook Pro.
 - `npm install -g serve`
 - `serve -s build`
 
+## Deploy on Android device
+
+- `npx cap open android`
+- choose your device and click the "run" button in Android Studio
 
 ## Some random notes
 
