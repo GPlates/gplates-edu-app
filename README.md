@@ -47,6 +47,7 @@ The following steps worked on my Macbook Pro.
 
 `convert output.png -resize 1000x1000 -background Black -gravity center -extent 2000x2000 out.png`
 
+Use xcode to change icon and splash image.
 
 ## Framework candidates
 
