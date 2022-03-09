@@ -1,0 +1,7 @@
+{
+  "name": "gplates-edu-ion",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
