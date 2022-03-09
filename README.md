@@ -25,6 +25,13 @@ The following steps worked on my Macbook Pro.
 - `npx cap open android`
 - choose your device and click the "run" button in Android Studio
 
+## Deploy on ios device
+
+- `ionic capacitor copy ios`
+- Add an account with your Apple ID and choose the team under "signing&capabilities" in XCode
+- `ionic capacitor run ios -l --external`
+- On your ios device, go to "Settings > General > Device Management" to trust the developer
+
 ## Some random notes
 
 * nvm use 16
