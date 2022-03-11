@@ -3,9 +3,10 @@ import { IonLoading, IonButton, IonIcon } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
 import {axios} from '../components/AxiosAdopter';
-import qs from 'qs';
 import React from 'react';
 
+
+const qs = require('qs');
 type vars = { responseStr: string, type: string, coordinates: any, showLoading: boolean }
 export default class Tab2 extends React.Component<{}, vars> {
   constructor(props: any) {
