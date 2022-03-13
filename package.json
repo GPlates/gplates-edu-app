@@ -73,7 +73,9 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "3.3.2"
+    "@capacitor/cli": "3.3.2",
+    "cordova-res": "^0.15.4",
+    "webpack": "4.44.2"
   },
   "description": "An Ionic project"
 }
