@@ -1,8 +1,31 @@
-ion-toolbar{
+ion-toolbar {
     color:blue
 }
 
 ion-title.title-default {
     color: purple;
     font-size: 30px;
-  }
+}
+
+.loading-bar {
+    width: 128px;
+}
+
+.results {
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: var(--border-radius);
+    margin: 1em;
+    min-height: 320px;
+    padding: 1em;
+}
+
+.submit-button {
+    --border-radius: 8px;
+    margin: 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+    .results {
+        background-color: rgba(255, 255, 255, 0.12);
+    }
+}
