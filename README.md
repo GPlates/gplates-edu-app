@@ -17,19 +17,28 @@ The following steps worked on my Macbook Pro.
 
 ## Serve as a web page
 
-- `npm install -g serve`
-- `serve -s build`
+- `craco start`
 
 ## Deploy on Android device
 
+- If resources have not been generated yet:
+- `cordova-res android --icon-background-source '#FFFFFF' --copy`
+- Update static files:
+- `craco build`
+- Copy to android folder:
+- `npx cap copy android`
+- Open in Android Studio:
 - `npx cap open android`
-- choose your device and click the "run" button in Android Studio
+- Choose your device and click the "run" button in Android Studio
 
 ## Deploy on ios device
 
-- `ionic capacitor copy ios`
+- If resources have not been generated yet:
+- `cordova-res ios --copy`
+- Update static files:
+- `craco build`
 - Add an account with your Apple ID and choose the team under "signing&capabilities" in XCode
-- `ionic capacitor run ios -l --external`
+- `npx cap run ios -l --external`
 - On your ios device, go to "Settings > General > Device Management" to trust the developer
 
 ## Some random notes
