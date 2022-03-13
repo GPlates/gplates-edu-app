@@ -1,8 +1,19 @@
-ion-toolbar{
-    color:blue
+ion-toolbar {
+    color: blue
 }
 
 ion-title.title-default {
     color: purple;
     font-size: 30px;
-  }
+}
+
+.tabButton {
+    /* color: peru; */
+    display: flex;
+    color: purple;
+}
+
+
+/* .data {
+    margin-left: 50%;
+} */
