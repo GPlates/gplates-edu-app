@@ -7,7 +7,7 @@ import {
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
-  IonTabs,
+  IonTabs, useIonToast,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
@@ -55,6 +55,20 @@ export interface Tab2Props {
 const App: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [points, setPoints] = useState<Points | undefined>();
+  const [present, dismiss] = useIonToast();
+  const [toastId, setToastId] = useState('');
+
+  const presentToast = async (id: string, message: string) => {
+    if (toastId !== id) {
+      setToastId(id);
+      await present({
+        buttons: [{text: 'hide', handler: () => dismiss()}],
+        duration: 3000,
+        message: message,
+        onDidDismiss: () => setToastId(''),
+      });
+    }
+  }
 
   const unregister = fetchIntercept.register({
     request: function (url, config) {
@@ -66,7 +80,9 @@ const App: React.FC = () => {
     requestError: function (error) {
       // Called when an error occurred during another 'request' interceptor call
       setLoading(false);
-      return Promise.reject(error);
+      return presentToast('request_error', 'Request Error').then(() => {
+        return Promise.reject(error);
+      });
     },
 
     response: function (response) {
@@ -78,7 +94,9 @@ const App: React.FC = () => {
     responseError: function (error) {
       // Handle an fetch error
       setLoading(false);
-      return Promise.reject(error);
+      return presentToast('response_error', 'Network Error').then(() => {
+        return Promise.reject(error);
+      });
     }
   });
 
