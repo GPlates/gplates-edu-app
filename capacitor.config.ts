@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'gplates-edu-ion',
+  appId: 'com.earthbyte.gplates',
+  appName: 'GPlates',
   webDir: 'build',
   bundledWebRuntime: false,
   server: {
