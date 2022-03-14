@@ -33,14 +33,28 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import {useState} from "react";
+import React, {useState} from "react";
 
-export interface Props {
+interface Points {
+  type: string,
+  coordinates: [
+      number[]
+  ]
+}
+
+export interface Tab1Props {
+  points?: Points,
+}
+
+export interface Tab2Props {
   loading: boolean;
+  points?: Points,
+  setPoints: React.Dispatch<React.SetStateAction<Points | undefined>>,
 }
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(false);
+  const [points, setPoints] = useState<Points | undefined>();
 
   const unregister = fetchIntercept.register({
     request: function (url, config) {
@@ -74,10 +88,10 @@ const App: React.FC = () => {
           <IonTabs>
             <IonRouterOutlet>
               <Route exact path="/tab1">
-                <Tab1/>
+                <Tab1 {...{points}} />
               </Route>
               <Route exact path="/tab2">
-                <Tab2 loading={loading}/>
+                <Tab2 {...{loading, points, setPoints}}/>
               </Route>
               <Route path="/tab3">
                 <Tab3/>

@@ -1,27 +1,28 @@
 import {IonButton, IonContent, IonHeader, IonPage, IonProgressBar, IonTitle, IonToolbar} from '@ionic/react';
 import './Tab2.css';
-import {useState} from "react";
 import {Transition} from "react-transition-group";
-import {Props} from "../App";
+import {Tab2Props} from "../App";
 import {defaultStyle, fadeStyles} from "../transitions";
 
-const Tab2: React.FC<Props> = (props) => {
+const Tab2: React.FC<Tab2Props> = (props) => {
     const duration = 150;
-    const [value, setValue] = useState({});
 
-    const clearValue = () => {
-        setValue({});
+    const clearPoints = () => {
+        props.setPoints(undefined);
     }
 
     const isEmpty = () => {
-        return Object.entries(value).length < 1
+        if (props.points != null) {
+            return Object.entries(props.points).length < 1
+        }
+        return true;
     }
 
     const sendRequest = () => {
         fetch('https://gws.gplates.org/reconstruct/reconstruct_points/?points=95,54,142,-33&time=140&model=SETON2012')
             .then(res => res.json())
             .then(data => {
-                setValue(data);
+                props.setPoints(data);
             });
     }
 
@@ -40,7 +41,7 @@ const Tab2: React.FC<Props> = (props) => {
                 </IonHeader>
                 <div className="results">
                     <pre>
-                        {JSON.stringify(value, null, 4)}
+                        {isEmpty() ? '{}' : JSON.stringify(props.points, null, 4)}
                     </pre>
                 </div>
                 <IonButton class="submit-button"
@@ -67,7 +68,7 @@ const Tab2: React.FC<Props> = (props) => {
                 <IonButton class="submit-button"
                            disabled={isEmpty()}
                            expand="block"
-                           onClick={clearValue}>
+                           onClick={clearPoints}>
                     Clear
                 </IonButton>
             </IonContent>
