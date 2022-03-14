@@ -6,21 +6,17 @@ import React, {useEffect, useMemo, useRef, useState} from 'react';
 import Globe, {GlobeMethods, GlobeProps} from  'react-globe.gl';
 import d3 from 'd3';
 import Map from '../components/Map';
-
+/**
+ * show the Map from the components
+ * @returns Map
+ */
 const Tab3: React.FC = () => {
   
   
    
   
 
-    
 
-   
-  
-
-  // useIonViewDidEnter(() => {
-  //   var viewer = new Viewer('cesiumContainer');
-  // });
   return (
     <IonPage>
      <IonContent fullscreen>

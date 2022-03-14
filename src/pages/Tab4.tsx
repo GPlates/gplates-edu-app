@@ -18,7 +18,9 @@ import Geometry from 'cesium/Source/Core/Geometry';
 import Bulb from '../components/Bulb';
 extend({ OrbitControls });
 
-
+/**
+ * create the square and ambientLight and Blub
+ */
 interface ContainerProps {
     props: any;
 }
@@ -47,11 +49,6 @@ const Tab4: React.FC = () => {
 
 
 
-
-
-    // useIonViewDidEnter(() => {
-    //   var viewer = new Viewer('cesiumContainer');
-    // });
     return (
         <IonPage>
             <IonContent fullscreen>

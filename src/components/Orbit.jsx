@@ -1,3 +1,7 @@
+/**
+ * using OrbitControls from three library
+ */
+
 import { extend, useThree } from 'react-three-fiber';
 import {
     OrbitControls

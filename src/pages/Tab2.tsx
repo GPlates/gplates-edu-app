@@ -6,6 +6,10 @@ import './Tab2.css';
 
 
 const Tab2: React.FC = () => {
+  /**
+   * use setcoordinate and setdatatype to store the response from the url in getcoordinates function
+   * use listItem container to show the coordinate and data type from the url
+   */
   const [coordinate, setCoordinate] = useState([]);
   const [dataType, setDataType] = useState("");
 

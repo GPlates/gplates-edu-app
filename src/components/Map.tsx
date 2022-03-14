@@ -1,6 +1,9 @@
 import React, { Component, useRef, useEffect } from 'react';
 import { loadModules } from "esri-loader";
-
+/**
+ * create a Map container that loads the module of mapview, 
+ * webmap and geojsonlayer for show the geojson data of crime statistic in US.
+ */
 interface ContainerProps {
     id: string;
 }

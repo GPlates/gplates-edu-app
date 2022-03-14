@@ -1,5 +1,9 @@
 
-
+/**create the floor for the animation
+ * 
+ * @param {*} props 
+ * @returns mesh
+ */
 const Floor = props => {
    // const [ref, api] = useBox(() => ({args: [20,1,10], ...props}))
     return (
